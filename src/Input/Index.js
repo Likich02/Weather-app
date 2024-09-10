@@ -1,11 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "../App.css";
 
-export const Input = () => {
+const InputTag = () => {
+  const [inputValue, setInputValue] = useState("empty");
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return (
-    <div className="InputWrap">
-      <input className="Input" />
-      <button className="Button">+</button>
-    </div>
+    <input className="Input" onChange={handleOnChange} value={inputValue} />
   );
 };
+
+const Button = () => <button className="Button">+</button>;
+
+export const Input = () => (
+  <div className="InputWrap">
+    <InputTag />
+    <Button />
+  </div>
+);
