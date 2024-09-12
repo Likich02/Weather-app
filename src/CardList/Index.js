@@ -1,8 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../App.css";
 import { Card } from "../Card";
 
 export const CardList = ({ citiesList }) => {
+  useEffect(() => {}, []);
   return (
     <div className="CardList">
       {citiesList.map((city) => (

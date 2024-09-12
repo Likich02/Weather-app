@@ -11,7 +11,7 @@ export const Card = ({ city }) => {
       .then((res) => res.json())
       .then(setData);
   }, []);
-  console.log("data", data);
+
   if (!data) return null;
   const { name, weather, main } = data;
   const { description, icon } = weather[0];
